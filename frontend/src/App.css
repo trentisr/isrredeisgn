@@ -1,38 +1,34 @@
+/* Global CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Ensures no extra space around the body */
+  padding: 0; /* Removes default body padding */
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-background {
+  background-image: url('/star.png'); /* Correct reference to image in the public folder */
+  background-size: cover; /* Makes the background cover the entire page */
+  background-position: top center; /* Positions the image at the top-center */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+  height: 100vh; /* Ensure the background takes the full height of the screen */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-content {
+  text-align: center;
+  margin-top: 50px;
 }

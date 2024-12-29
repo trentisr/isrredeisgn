@@ -1,0 +1,62 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 240, 240, 0); /* Semi-transparent background */
+  color: #000000;
+  padding: 1rem;
+  margin: 0 2rem; /* Margin on the left and right */
+  font-family: Arial, sans-serif;
+  position: fixed;
+  width: calc(100% - 4rem); /* Adjust width to account for left and right margins */
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #004499; /* Blue background */
+  border-radius: 50px; /* Round the whole container into a single bubble */
+  overflow: hidden; /* Hide overflow to ensure links are inside the bubble */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white; /* White text color */
+  font-size: 1rem;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 0.75rem 1rem; /* Padding inside each link */
+  border-radius: 50px; /* Round the links to fit inside the container */
+  margin: 0; /* Remove any space between links */
+}
+
+.nav-links a:hover {
+  color: #f0a500; /* Golden color on hover */
+  background-color: rgba(173, 216, 230, 1); /* Lighter blue background when hovered */
+}
+
+.contact-button {
+  padding: 0.75rem 1.25rem;
+  background-color: #f0a500; /* Golden color */
+  color: #333;
+  border: none;
+  border-radius: 100px; /* Round button */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #fff; /* White background on hover */
+  color: #f0a500; /* Golden text on hover */
+}
