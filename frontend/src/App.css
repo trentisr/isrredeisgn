@@ -14,19 +14,19 @@ body {
 .App {
   text-align: center;
 }
-
 .home-background {
-  background-image: url('/star.png'); /* Correct reference to image in the public folder */
-  background-size: cover; /* Makes the background cover the entire page */
-  background-position: top center; /* Positions the image at the top-center */
-  background-attachment: fixed; /* Keeps the background fixed when scrolling */
-  height: 100vh; /* Ensure the background takes the full height of the screen */
+  background-image: url('../public/star.png'); /* Path from the root of the app */
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
 }
+
 
 .home-content {
   text-align: center;
