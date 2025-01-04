@@ -6,29 +6,224 @@
 }
 
 body {
-  margin: 0; /* Ensures no extra space around the body */
-  padding: 0; /* Removes default body padding */
-  overflow-x: hidden; /* Prevents horizontal scroll */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 .App {
   text-align: center;
 }
+
+/* First Section with star.png */
 .home-background {
-  background-image: url('../public/star.png'); /* Path from the root of the app */
-  background-size: cover;
-  background-position: top center;
+  background-image: url('../public/star.png'); /* Path to star.png */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  position: relative; /* Enables absolute positioning of the astronaut and button */
+  padding-bottom: 0; /* Remove extra bottom padding */
 }
 
+/* Content Container for First Section */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+  position: relative;
+}
 
-.home-content {
+/* Unclickable Gradient Button */
+.gradient-button {
+  background: linear-gradient(to right, #87CEFA, #4682B4); /* Gradient from light blue to dark blue */
+  border: none; /* Removes default border */
+  color: white; /* White text */
+  font-size: 2.5rem; /* Increased font size */
+  padding: 1rem 2rem; /* Increased padding for a larger button */
+  border-radius: 10px; /* Slightly larger rounded corners */
+  cursor: not-allowed; /* Indicates the button is not clickable */
+  text-transform: uppercase; /* Capitalize the text */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  z-index: 2; /* Ensure button stays above the astronaut */
+  position: relative;
+  margin-top: 40px; /* Increased space between the text above */
+}
+
+/* Astronaut Image */
+.astro-image {
+  position: absolute; /* Positioning the astronaut image */
+  bottom: -30px; /* Adjusts to appear holding the button */
+  max-width: 100%; /* Ensures the image doesn't overflow the container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  z-index: 1; /* Places the astronaut behind the button */
+  display: block; /* Centers the image in the container */
+  margin-left: auto; /* Centers the image horizontally */
+  margin-right: auto; /* Centers the image horizontally */
+}
+
+/* Text Above the Button */
+.home-background h1 {
+  font-size: 4rem; /* Increased text size */
+  font-weight: bold;
+  margin-bottom: 30px; /* More space between the text and the button */
+}
+
+/* Second Section with home.png */
+.scroll-background {
+  background-image: url('../public/home.png'); /* Path to home.png */
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* At least full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  color: white;
+  padding: 2rem; /* Padding to provide space for content */
+}
+
+/* Content Container for Scroll Section */
+.scroll-content {
+  padding: 2rem;
   text-align: center;
+  color: black; /* Adjust text color for contrast */
+}
+
+/* Styling for "Our Story" Section */
+.story-container {
+  text-align: left; /* Align text to the left */
+  margin-top: 50px; /* Space between previous content */
+  max-width: 800px; /* Limit width for readability */
+  margin-left: auto; /* Centers the section horizontally */
+  margin-right: auto; /* Centers the section horizontally */
+}
+
+.story-title {
+  color: #f0a500; /* Yellow text for "Our Story" */
+  font-size: 2.5rem; /* Larger text for the title */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Space below the title */
+}
+
+.story-text {
+  color: white; /* White text for the description */
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem; /* Space below the paragraph */
+}
+
+.story-description {
+  color: white; /* White text for the smaller description */
+  font-size: 1.2rem;
+  line-height: 1.5; /* Improve readability with more line spacing */
+  margin-bottom: 30px; /* Space below the description */
+}
+
+/* Learn More Button */
+.learn-more-button {
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient from blue to darker blue */
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto; /* Centers the button */
+}
+
+.learn-more-button:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* Reverse gradient on hover */
+}
+
+/* Our Services Section */
+.services-container {
+  display: flex;
+  justify-content: center; /* Centers the services items horizontally */
+  flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+  margin-top: 50px; /* Adds space above the section */
+  gap: 20px; /* Adds space between the service items */
+  padding: 0 20px; /* Adds padding to prevent cards from touching the edges */
+}
+
+/* Change "Our Services" color */
+.our-services-title {
+  color: #00FFFF; /* Cyan color */
+  font-size: 3rem; /* Large font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* Centers the title */
+}
+
+/* Service Items */
+.service-item {
+  background-color: #33333300; /* Dark background for the service items */
+  color: white; /* White text */
+  width: 30%; /* Set the width to 30% to display 3 items in a row */
+  padding: 20px;
+  text-align: center; /* Centers the text inside */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+  box-sizing: border-box;
+  border-radius: 10px; /* Rounded corners for the cards */
+}
+
+.service-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px; /* Adds space between title and description */
+}
+
+/* Text Areas for Each Service */
+.service-description {
+  font-size: 1.2rem;
+  line-height: 1.5; /* Improve readability */
+  margin-bottom: 10px;
+}
+
+/* Section for Team Members */
+.team-section {
   margin-top: 50px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: inline-block;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%; /* Make the images circular */
+  margin-bottom: 10px;
+}
+
+.team-member-name {
+  font-weight: bold;
+}
+
+.team-member-role {
+  font-style: italic;
+  color: #777;
 }

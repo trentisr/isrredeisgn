@@ -6,13 +6,19 @@
   align-items: center;
   background-color: rgba(255, 240, 240, 0); /* Semi-transparent background */
   color: #000000;
-  padding: 1rem;
-  margin: 0 2rem; /* Margin on the left and right */
+  padding: 1rem 4rem; /* Increased padding for a more spacious layout */
   font-family: Arial, sans-serif;
   position: fixed;
-  width: calc(100% - 4rem); /* Adjust width to account for left and right margins */
+  width: calc(100% - 8rem); /* Adjust width to account for left and right margins */
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allows the content to wrap to the next line on smaller screens */
+}
+
+.logo {
+  font-size: 2rem; /* Slightly larger for better visibility */
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -24,6 +30,7 @@
   background-color: #004499; /* Blue background */
   border-radius: 50px; /* Round the whole container into a single bubble */
   overflow: hidden; /* Hide overflow to ensure links are inside the bubble */
+  flex-wrap: wrap; /* Allow the links to wrap to the next line on smaller screens */
 }
 
 .nav-links li {
@@ -33,11 +40,12 @@
 .nav-links a {
   text-decoration: none;
   color: white; /* White text color */
-  font-size: 1rem;
+  font-size: 1.2rem; /* Increased font size for better readability */
   transition: color 0.3s, background-color 0.3s;
-  padding: 0.75rem 1rem; /* Padding inside each link */
+  padding: 0.9rem 1.5rem; /* Increased padding for each link */
   border-radius: 50px; /* Round the links to fit inside the container */
   margin: 0; /* Remove any space between links */
+  font-weight: 600; /* Slightly bolder text for emphasis */
 }
 
 .nav-links a:hover {
@@ -46,17 +54,63 @@
 }
 
 .contact-button {
-  padding: 0.75rem 1.25rem;
-  background-color: #f0a500; /* Golden color */
+  padding: 1rem 2rem; /* Golden color for the button */
+  background-color: #f0a500;
   color: #333;
   border: none;
-  border-radius: 100px; /* Round button */
+  border-radius: 50px; /* Rounded button */
   cursor: pointer;
   font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Capitalized text */
   transition: background-color 0.3s, color 0.3s;
 }
 
 .contact-button:hover {
   background-color: #fff; /* White background on hover */
   color: #f0a500; /* Golden text on hover */
+}
+
+.contact-button:focus {
+  outline: none; /* Removes the default focus outline */
+}
+
+.gradient-button {
+  background: linear-gradient(to right, #87CEFA, #4682B4); /* Gradient from light blue to dark blue */
+  border: none; /* Removes default border */
+  color: white; /* White text */
+  font-size: 2rem; /* Slightly bigger text size */
+  padding: 1rem 2rem; /* Bigger padding for the button */
+  border-radius: 8px; /* Rounded corners */
+  cursor: not-allowed; /* Indicates the button is not clickable */
+  margin-top: 20px; /* Adds space between the text above */
+  text-transform: uppercase; /* Capitalize the text */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    padding: 1rem 2rem; /* Less padding on smaller screens */
+    width: 100%; /* Full width for the navbar */
+  }
+
+  .nav-links {
+    width: 100%; /* Full width for the link container */
+    justify-content: center; /* Center links */
+    background-color: transparent; /* Transparent background on small screens */
+    margin-top: 1rem; /* Adds space between the logo and links */
+    border-radius: 0; /* Remove rounded corners */
+  }
+
+  .nav-links a {
+    font-size: 1.1rem; /* Slightly smaller font size for small screens */
+    padding: 0.75rem 1.2rem; /* Adjust padding for smaller screens */
+  }
+
+  .contact-button {
+    font-size: 1.1rem; /* Slightly larger text for better readability */
+    padding: 1rem 1.5rem; /* Adjust padding for the button */
+  }
 }
